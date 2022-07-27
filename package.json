@@ -22,7 +22,10 @@
   },
   "homepage": "https://github.com/Yoko-cyer/Module10-challenge-Team-Profile-Generator#readme",
   "dependencies": {
-    "inquirer": "^8.0.0",
+    "inquirer": "^8.0.0"
+  },
+  "devDependencies": {
+    "@types/jest": "^28.1.6",
     "jest": "^28.1.3"
   }
 }
