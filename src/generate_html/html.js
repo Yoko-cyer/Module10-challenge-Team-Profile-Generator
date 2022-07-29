@@ -40,7 +40,7 @@ function generateHtml(employees){
   // once done
   // join the cards into 1 massive string
   // replace the {{body}} with this card string
-  return mainTemplate.replace("{{body}}", cards);
+  return mainTemplate.replace("{{ body }}", cards);
 
 }
 
