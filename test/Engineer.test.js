@@ -2,22 +2,23 @@ const Engineer = require("../lib/employees/Engineer");
 
 describe('Engineer test', () => {
 
-    test('getGitHub() ', () => {
-        const gitHub = 'timmobrien';
+    test('getGitHub() will return github property', () => {
+        
+        const gitHub = 'yoko-cyber';
+        const dummy2 = new Engineer(9876,'yoko@gmail.com','Yoko', gitHub);
 
-        const dummy = new Engineer(25,'tim@tim.com','Tim','timmobrien');
+        const result = dummy2.getGithub();
 
-        const result = dummy.getGitHub();
-
-        expect(gitHub).toStrictEqual(result);
+        expect(result).toStrictEqual(gitHub);
     });
 
-    test ("getRole() will override to 'Engineer'", () => {
+    test ("getRole() will return 'Engineer'", () => {
+
         const role = 'Engineer'
 
-        const dummy = new Engineer(55,'tim@tim.com', 'tim', 'timmobrien');
+        const dummy3 = new Engineer(9876,'yoko@gmail.com','Yoko', role);
 
-        const result = dummy.getRole();
+        const result = dummy3.getRole();
 
         expect(result).toStrictEqual(role);
     });
