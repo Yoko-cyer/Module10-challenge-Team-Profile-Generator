@@ -1,4 +1,13 @@
 const inquirer = require("inquirer");
+const Engineer = require("./lib/employees/Engineer");
+const Intern = require("./lib/employees/Intern");
+const Manager = require("./lib/employees/Manager");
+const fs = require("fs");
+const path = require("path");
+const generateHtml = require("./src/generate_html/html");
+
+const employees = [];
+const outputHtmlFile = path.join(__dirname, "output", "team.html");
 
 async function main() {
   const answers = await inquirer.prompt([
@@ -57,10 +66,30 @@ async function main() {
       name: "add_another"
     }
   ]);
+
   // once we got an employee, store it
+  // check for the role
+  // create the employee obj based on the role
+  // add to the employee array
+  if(answers.role === "manager"){
+    employees.push(new Manager(answers.id, answers.email, answers.name, answers.office_number));
+  }
+  if(answers.role === "engineer"){
+    employees.push(new Engineer(answers.id, answers.email, answers.name, answers.github));
+  }
+  if(answers.role === "intern"){
+    employees.push(new Intern(answers.id, answers.email, answers.name, answers.school));
+  }
+
+  console.log(employees);
+
   // once the user says enough, we will generate the thml based on all the employees collected
   if(!answers.add_another){
     // generate the html
+    const html = generateHtml(employees);
+    // call fs, write to a file
+    fs.writeFileSync(outputHtmlFile, html, "utf-8");
+
   }else{
     // add another one 
     await main();
@@ -70,10 +99,6 @@ async function main() {
 }
 
 main();
-// ask ID, name, email
-
-// manager - office num
-// engineer - github
-// intern - school 
+ 
 
 
