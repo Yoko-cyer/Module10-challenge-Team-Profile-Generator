@@ -24,15 +24,21 @@ Please run `npm i` on command line to install any dependencies before you start 
 
 1. Please run `node index.js` to start add your information. 
 2. Once you run the command, it will promt questions asking you, employees role(Manager, Engineer, Intern), ID, email, name, office numbers (if manager), github username (if engineer) and school name (if intern).
-3. A html file is generated in `output` folder. 
+3. A new html file is generated in `output` folder. 
 
 ---
-## Video
+## Video and sample image
+
+
+![Sample Generated html file](./img/127.0.0.1_5500_output_team.html.png)
+
+
+[Link to the video](https://drive.google.com/file/d/1jV0qLFqPQeBNZUbubdGie0DgkBxnXEuq/view)
+
 
 ---
 ## Links
 
 [Github repo page](https://www.example.com)
 
-[title](https://www.example.com)
 
